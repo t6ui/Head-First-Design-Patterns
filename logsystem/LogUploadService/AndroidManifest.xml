@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wingtech.logupload"
+    android:persistent="true"
+    android:sharedUserId="android.uid.system"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".LogCollectSettingActivity"
+            android:label="@string/log_collect_settings"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".service.LogUploadIntentService">
+            <intent-filter>
+                <action android:name="com.wingtech.logupload.UPLOAD_REQUEST" />
+            </intent-filter>
+        </service>
+
+        <service android:name=".service.LogCollectService">
+            <intent-filter>
+                <action android:name="com.wingtech.logupload.startToRecordLowRAM" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name=".BootBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true"> <!-- android:directBootAware="true" -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="com.wingtech.upload.START_JOBSERVICE" />
+                <!-- <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" /> -->
+            </intent-filter>
+        </receiver>
+
+
+        <receiver
+            android:name=".ShutdownReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".LogCollectService$NetworkConnectChangedReceiver"></receiver>
+
+        <provider
+            android:name=".db.UploadInfoProvider"
+            android:authorities="uploadInfo_provider" />
+    </application>
+
+</manifest>

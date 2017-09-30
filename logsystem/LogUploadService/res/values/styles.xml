@@ -1,0 +1,13 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppTheme" parent="android:style/Theme.Material.Settings">
+        <item name="android:actionBarStyle">@style/style_actionbar</item>
+        <item name="android:windowBackground">@drawable/window_background</item>
+    </style>
+
+    <style name="style_actionbar" parent="android:Widget.ActionBar">
+        <item name="android:background">#00cc00</item>
+        <item name="android:displayOptions">showTitle</item>
+    </style>
+
+</resources>

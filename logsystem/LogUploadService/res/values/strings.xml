@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LogUpload</string>
+    <string name="log_collect_settings">Upload Settings</string>
+    <string name="realtime_scan_interval">Realtime scan interval</string>
+    <string name="lowmemory_scan_interval">Lowmemory scan interval</string>
+    <string name="lowmemory_grade">Lowmemory grade</string>
+    <string name="upload_interval">Upload Interval</string>
+    <string name="switch_server">PDM</string>
+    <string name="start_server">open</string>
+    <string name="stop_server">close</string>
+</resources>

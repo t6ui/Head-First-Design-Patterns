@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="realtime_scan_interval_labels">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+    </string-array>
+
+    <string-array name="realtime_scan_interval_values" translatable="false">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+    </string-array>
+
+    <string-array name="lowmemory_scan_interval_labels">
+        <item>3 minutes</item>
+        <item>10 minutes</item>
+        <item>30 minute</item>
+    </string-array>
+
+    <string-array name="lowmemory_scan_interval_values" translatable="false">
+        <item>3</item>
+        <item>10</item>
+        <item>30</item>
+    </string-array>
+
+    <string-array name="lowmemory_grade_labels">
+        <item>Less than 10%</item>
+        <item>Less than 20%</item>
+        <item>Less than 30%</item>
+    </string-array>
+
+    <string-array name="lowmemory_grade_values" translatable="false">
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+    </string-array>
+
+    <string-array name="upload_interval_labels">
+        <item>1 hours</item>
+        <item>2 hours</item>
+        <item>6 hours</item>
+    </string-array>
+
+    <string-array name="upload_interval_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>6</item>
+    </string-array>
+
+</resources>
